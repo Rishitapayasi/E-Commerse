@@ -1,0 +1,28 @@
+<html>
+<head>
+</head>
+<body>
+  <h1>List of Profiles</h1>
+    <div>
+    <table class="table table table-hover">
+      <tr>
+	    <th><strong>Full Name</strong></th>
+	    <th><strong>Role</strong></th>
+	    <th><strong>Phone Number</strong></th>
+      <th><strong>Address</strong></th>
+      </tr>
+      <tbody class= "text-danger table table table-hover">
+      <% Profile.all.each do |profile| %>
+      <tr>
+      	<td><%= profile.full_name %></td>
+      	<td><%= profile.role %></td>
+      	<td><%= profile.phone_number %></td>
+        <td><%= profile.address %></td>
+      </tr>
+      <% end %>
+      </tbody>
+     </table>
+    
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> E-Commerse App</title>
+  <style>
+    body, html{
+      height: 100%;
+      margin: 0;
+    }
+
+    a:link {
+      color: black;
+      background-color: transparent;
+      text-decoration: none;
+    }
+    a:visited {
+      color: black;
+      background-color: transparent;
+      text-decoration: none;
+    }
+    a:hover {
+      color: red;
+      background-color: transparent;
+      text-decoration: underline;
+    }
+    a:active {
+      color: black;
+      background-color: transparent;
+      text-decoration: underline;
+    }
+    .background-img {   
+    background-size: cover; 
+    background-position: center;
+    height: 100%;
+    background-image: url(  
+      "https://img.freepik.com/free-photo/arrangement-black-friday-shopping-carts-with-copy-space_23-2148667047.jpg?w=996&t=st=1704808965~exp=1704809565~hmac=f13469385ea68457df0b8505d8a6d4dbcf9505ac95193a4502ab2da9c0106b5e" );  
+    } 
+</style>
+</head>
+
+<body>
+ <div class="background-img" >  
+ <h1  style="background-color: burlywood;"> E-commerse App</h1>
+ <div>
+  <% if current_user %>
+    <h2><%= "Hello,#{current_user.email}" %></h2>
+    <%= button_to "Logout", destroy_user_session_path, data: {turbo: "false"}, method: :delete %>
+  <% else %>
+    <% link_to "Login", new_user_session_path%>
+    <% link_to "Create Account", new_user_registration_path %>
+  <% end %>
+ </div>
+    <% if current_user %>
+      <a href="/profiles/new", style="position: absolute;
+        left: 1100px; 
+        top: 50px;"><h2> Complete your profile </h2> </a>
+    <% else %>
+      <a href="/users/sign_in" style="position: absolute;
+        left: 1000px; 
+        top: 60px;"> <h2>sign in|log in </h2> </a>
+    <% end %>
+ </div>
+</body>
+</html>

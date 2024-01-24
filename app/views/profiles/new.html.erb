@@ -1,0 +1,40 @@
+<div class="container py-5">
+
+  <h2><b>PROFILE</b></h2>
+<%= form_with model: @profile do |f| %>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <%= f.label :full_name %><br />
+      <%= f.text_field :full_name, autofocus: true, autocomplete: "full_name" %>
+    </div>
+ 
+    <div class="col-md-4 mb-3">
+      <%= f.label :address %></br>
+      <%= f.text_field :address, autocomplete: "address" %>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <%= f.label :phone_number %></br>
+      <%= f.text_field :phone_number, autocomplete: "phone_number" %>
+    </div>
+ 
+    <div class="col-md-4 mb-3">
+      <%= f.label :shipping_address %></br>
+      <%= f.text_field :shipping_address, autocomplete: "shipping_address" %>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <%= f.label :role %></br>
+      <select class="custom-select">
+        <option value="1">Buyer</option>
+        <option value="2">Seller</option>
+      </select>
+    </div>
+  </div>
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+</div>
+
+
