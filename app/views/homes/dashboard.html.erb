@@ -1,13 +1,57 @@
+<!DOCTYPE html>
 <html>
-  <head>
-	  <body>
-      <div>
-				<h2>welcome,complete your profile<h2>
-      </div>
-        <a href="/profiles/new" style="position: absolute;
-				left: 800px; 
-				top: 10px; 
-				"> <h2>profile</h2> </a>
-    </body>
-  </head>
+<head>
+  <title> E-Commerce App</title>
+  <style>
+    body, html{
+      height: 100%;
+      margin: 0;
+    }
+
+    a:link {
+      color: black;
+      background-color: transparent;
+      text-decoration: none;
+    }
+    a:visited {
+      color: black;
+      background-color: transparent;
+      text-decoration: none;
+    }
+    a:hover {
+      color: red;
+      background-color: transparent;
+      text-decoration: underline;
+    }
+    a:active {
+      color: black;
+      background-color: transparent;
+      text-decoration: underline;
+    }
+    .background-img {   
+    background-size: cover; 
+    background-position: center;
+    height: 100%;
+    background-image: url(  
+      "https://img.freepik.com/free-photo/arrangement-black-friday-shopping-carts-with-copy-space_23-2148667047.jpg?w=996&t=st=1704808965~exp=1704809565~hmac=f13469385ea68457df0b8505d8a6d4dbcf9505ac95193a4502ab2da9c0106b5e" );  
+    } 
+</style>
+</head>
+
+<body>
+ <div class="background-img" >  
+ <h1  style="background-color: burlywood;"> E-commerce App</h1>
+ <div>
+  
+    <h2><%= "Hello,#{current_user.email}" %></h2>
+    <%= button_to "Logout", destroy_user_session_path, data: {turbo: "false"}, method: :delete %>
+      <a href="/profiles/new", style="position: absolute;
+        left: 1100px; 
+        top: 50px;"><h2>profile</h2> </a>
+      <a href="/products", style="position: absolute;
+        left: 900px; 
+        top: 50px;"><h2>Add Product</h2> </a>
+ </div>
+</body>
 </html>
+ 

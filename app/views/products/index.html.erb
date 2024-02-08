@@ -1,0 +1,25 @@
+<html>
+<head>
+</head>
+<body>
+	<h2>List of Products</h2>
+	<div>
+		<table class="table table table-hover">
+	  <tr>
+	    <th><strong>Name</strong></th>
+	    <th><strong>Description</strong></th>
+	    <th><strong>quantity</strong></th>
+      </tr>
+      <tbody class= "text-danger table table table-hover">
+      <% Product.all.each do |product| %>
+      <tr>
+      	<td><%= product.name %></td>
+      	<td><%= product.description%></td>
+      	<td><%= product.quantity %></td>
+      </tr>
+      <% end %>
+      </tbody>
+     </table>
+	</div>
+</body>
+</html>

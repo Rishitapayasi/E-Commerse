@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
 
+  enum :role, [:buyer, :seller]
 
   has_one :profile, dependent: :destroy
   has_many :products, dependent: :destroy

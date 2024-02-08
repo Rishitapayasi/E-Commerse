@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> E-Commerse App</title>
+  <title> E-Commerce App</title>
   <style>
     body, html{
       height: 100%;
@@ -40,7 +40,7 @@
 
 <body>
  <div class="background-img" >  
- <h1  style="background-color: burlywood;"> E-commerse App</h1>
+ <h1  style="background-color: burlywood;"> E-commerce App</h1>
  <div>
   <% if current_user %>
     <h2><%= "Hello,#{current_user.email}" %></h2>
@@ -50,10 +50,13 @@
     <% link_to "Create Account", new_user_registration_path %>
   <% end %>
  </div>
-    <% if current_user %>
+    <% if current_user.seller? %>
       <a href="/profiles/new", style="position: absolute;
         left: 1100px; 
-        top: 50px;"><h2> Complete your profile </h2> </a>
+        top: 50px;"><h2>profile</h2> </a>
+      <a href="/products/new", style="position: absolute;
+        left: 900px; 
+        top: 50px;"><h2>Add Product</h2> </a>
     <% else %>
       <a href="/users/sign_in" style="position: absolute;
         left: 1000px; 

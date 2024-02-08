@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_24_075007) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_06_122828) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -27,13 +27,13 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_24_075007) do
     t.datetime "updated_at", null: false
     t.integer "category_id", null: false
     t.integer "user_id"
+    t.integer "price"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "profiles", force: :cascade do |t|
     t.string "full_name"
-    t.integer "role"
     t.text "address"
     t.integer "phone_number"
     t.text "ShippingAddress"
@@ -53,6 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_24_075007) do
     t.datetime "updated_at", null: false
     t.string "uid"
     t.string "provider"
+    t.integer "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
